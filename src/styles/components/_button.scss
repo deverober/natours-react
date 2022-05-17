@@ -1,0 +1,24 @@
+.btn {
+position: relative;
+    z-index: 10;
+}
+
+.btn::after {
+    border-radius: 10rem;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInButton .5s ease-out .75;
+    animation-fill-mode: backwards;
+}
