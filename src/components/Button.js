@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Button = ({ hrefText = '#', buttonText, className } = props) => {
-    return <a className={`${className}`} href={`${hrefText ? hrefText : '#'}`}>
+const Button = ({ hrefText = '#', buttonText = 'Submit', className } = props) => {
+    return <a className={`${className}`} href={`${hrefText}`}>
         {buttonText}
     </a>
 }

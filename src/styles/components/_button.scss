@@ -1,24 +1,62 @@
 .btn {
-position: relative;
-    z-index: 10;
-}
+    &, 
+    &:link,
+    &:visited {
+        border-radius: 10rem;
+        display: inline-block;
+        font-size: 1.6rem;
+        padding: 1.5rem 4rem;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all .2s;
 
-.btn::after {
-    border-radius: 10rem;
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transition: all .4s;
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba($black-color, 0.2);
+        transform: translateY(-3px)
+    }
+
+    &:active, 
+    &:focus {
+        box-shadow: 0 .5rem 1rem rgba($black-color, 0.2);
+        outline: none;
+        transform: translateY(-1px);
+    }
+
+    &--animated {
+        animation: moveInButton .5s ease-out .75;
+        animation-fill-mode: backwards;
+    }
+
+    &::after {
+        border-radius: 10rem;
+        content: '';
+        display: inline-block;
+        height: 100%;
+        left: 0%;
+        position: absolute;
+        top: 0%;
+        transition: all .4s;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &--white {
+        background-color: $white-color;
+        color: $dark-green-color;
+
+        &::after {
+            background-color: $white-color;
+        }
+    }
 }
 
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
-}
-
-.btn-animated {
-    animation: moveInButton .5s ease-out .75;
-    animation-fill-mode: backwards;
 }

@@ -26,7 +26,7 @@ const Header = (props) => {
                     </span>
                 </h1>
                 <Button
-                    className={'btn btn-white btn-animated'}
+                    className={'btn btn--white btn--animated'}
                     buttonText={'Discover our tours'}
                 />
             </div>
